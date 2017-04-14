@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('gestionUsuarios', 'UsuariosController@gestionUsuarios');
+Route::post('importarUsuarios', 'UsuariosController@importarUsuarios');
