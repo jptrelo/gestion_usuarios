@@ -1,0 +1,29 @@
+html, body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+.row{
+	padding: 20px 0;
+}
+
+.center-block{
+	float: none;
+}
+
+.dropdown, .dropdown-menu {
+  width: 100%;
+}
+
+.dropdown button:nth-child(1) {
+  width: 85%;
+}
+
+.dropdown button:nth-child(2) {
+  width: 15%;
+  border-left: none;
+}
+
+#importacion form button{
+	width: 100%;
+}

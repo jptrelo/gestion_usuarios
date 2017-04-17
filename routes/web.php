@@ -15,5 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('gestionUsuarios', 'UsuariosController@gestionUsuarios');
-Route::post('importarUsuarios', 'UsuariosController@importarUsuarios');
+Route::group(['prefix' => 'usuarios'], function()
+{
+	Route::resource('/', 'UsuariosController');
+	Route::get('gestionUsuarios', 'UsuariosController@gestionUsuarios');
+	Route::post('importarUsuarios', 'UsuariosController@importarUsuarios');
+});
