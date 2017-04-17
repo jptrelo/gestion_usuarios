@@ -24,8 +24,12 @@
                                      ['class' => 'btn btn-info', 'type'=>'submit'])
                                 }}
                             </div>
-                        </div>                
-                    {!! Form::close() !!}
+                        </div>           
+
+                        @include('flash::message')
+                             
+                    {!! Form::close() !!}                    
+
                 </div>
             </div>
         </section>
@@ -79,7 +83,7 @@
                                 <th>&nbsp;</th>
                             </thead>
                             <tbody>
-                                @foreach ($usuarios as $usuario) 
+                                @forelse ($usuarios as $usuario) 
                                     <tr>
                                         <td>{{ $usuario->id }}</td>
                                         <td>{{ $usuario->first_name }}</td>
@@ -92,7 +96,11 @@
                                             </div>
                                         </td>
                                     </tr>
-                                @endforeach
+                                @empty
+                                    <tr>
+                                        <td colspan="4">No hay usuarios para mostrar.</td>
+                                    </tr>
+                                @endforelse
                             </tbody>
                         </table>
                         {{ $usuarios->links() }}

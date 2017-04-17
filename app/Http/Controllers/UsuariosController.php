@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Usuario;
 use App\Http\Traits\ExcelManageTrait;
+use Laracasts\Flash\Flash;
 
 class UsuariosController extends Controller
 {
@@ -31,7 +32,9 @@ class UsuariosController extends Controller
 
 			$this->importExcel($path, 'usuarios');
 
-			return 'Usuarios importados con exito.';
+			flash('Usuarios importados con exito.', 'success')->important();
+
+			return redirect()->route('index');
 
 		}else{
 

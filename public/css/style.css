@@ -24,6 +24,6 @@ html, body {
   border-left: none;
 }
 
-#importacion form button{
+#importacion form button[type='submit']{
 	width: 100%;
 }
