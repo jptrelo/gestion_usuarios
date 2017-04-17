@@ -20,4 +20,5 @@ Route::group(['prefix' => 'usuarios'], function()
 	Route::resource('/', 'UsuariosController');
 	Route::get('gestionUsuarios', 'UsuariosController@gestionUsuarios');
 	Route::post('importarUsuarios', 'UsuariosController@importarUsuarios');
+	Route::post('eliminar', 'UsuariosController@destroy');
 });

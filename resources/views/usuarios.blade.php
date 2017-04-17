@@ -21,13 +21,13 @@
                             <div class="col-xs-3">
                                 {{ Form::button(
                                     '<span class="glyphicon glyphicon-upload"></span> Subir',
-                                     ['class' => 'btn btn-info', 'type'=>'submit'])
+                                     ['class' => 'btn btn-success btn-block', 'type'=>'submit'])
                                 }}
                             </div>
                         </div>           
 
                         @include('flash::message')
-                             
+
                     {!! Form::close() !!}                    
 
                 </div>
@@ -37,7 +37,7 @@
         <section id="opcionesLista">
             <div class="container">
                 <div class="row">
-                    {!! Form::open(['url' => 'usuarios/', 'method' => 'POST', 'class' => 'form-horizontal center-block col-xs-12 col-sm-8 col-md-6']) !!}
+                    {!! Form::open(['url' => 'usuarios/', 'method' => 'GET', 'class' => 'form-horizontal center-block col-xs-12 col-sm-8 col-md-6']) !!}
                     <div class="form-group">
                         
                         <div class="col-xs-7">                    
@@ -73,9 +73,20 @@
         <section id="listaUsuarios">    
             <div class="container">
                 <div class="row">
-                    <div class="table-responsive">
-                        {{ $usuarios->links() }}
-                        <table class="table table-hover table-striped">
+                    <div class="col-xs-6">
+                            {{ $usuarios->links() }}
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="btn-group pull-right" role="group" aria-label="...">
+                          <button type="button" class="btn btn-danger" id="elim-usuarios">Eliminar</button>
+                          <button type="button" class="btn btn-warning edit-usuarios">Editar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="table-responsive">                     
+                        
+                        <table class="table table-hover table-striped tblUsuarios">
                             <thead>
                                 <th>ID</th>
                                 <th>Nombre</th>
@@ -84,15 +95,16 @@
                             </thead>
                             <tbody>
                                 @forelse ($usuarios as $usuario) 
-                                    <tr>
+                                    <tr id="usuario{{ $usuario->id }}">
                                         <td>{{ $usuario->id }}</td>
                                         <td>{{ $usuario->first_name }}</td>
                                         <td>{{ $usuario->last_name }}</td>
-                                        <td>
+                                        <td>  
                                             <div class="btn-group" data-toggle="buttons">
-                                              <label class="btn btn-info">
-                                                <input type="checkbox" autocomplete="off">
-                                              </label>
+                                                <label class="btn btn-default btn-xs">
+                                                    <input type="checkbox" value="{{ $usuario->id }}" autocomplete="off">
+                                                    <span class="glyphicon glyphicon-ok"></span>
+                                                </label>
                                             </div>
                                         </td>
                                     </tr>
@@ -102,15 +114,17 @@
                                     </tr>
                                 @endforelse
                             </tbody>
-                        </table>
-                        {{ $usuarios->links() }}
+                        </table>                        
                     </div>    
+                    {{ $usuarios->links() }}
                 </div>
             </div>
         </section>
 
+
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 @stop
 
 @section('librerias_js')
-    <script src="{{ asset('js/usuarios.js') }}" />
+    <script type="text/javascript" src="{{ asset('js/usuarios.js') }}"></script>
 @stop

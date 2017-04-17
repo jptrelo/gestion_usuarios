@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Usuario;
 use App\Http\Traits\ExcelManageTrait;
 use Laracasts\Flash\Flash;
+use Response;
 
 class UsuariosController extends Controller
 {
@@ -94,10 +95,18 @@ class UsuariosController extends Controller
     /**
      * Eliminar
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id = null)
     {
-        $usuario = Usuario::find($id)->delete();
-        return 'Usuario eliminado con exito.';
+        //$usuario = Usuario::find($id)->delete();
+        if (is_null($id)) {
+        	$ids_to_delete = array_map(function($item){ return $item; }, $request->listaUsuarios);
+        }else {
+        	$ids_to_delete = $id;
+        }
+        
+
+    	Usuario::whereIn('id', $ids_to_delete)->delete();
+        return Response::json(['message'=>'Usuario/s eliminado/s con exito.']);
     }
 
 }

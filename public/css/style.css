@@ -3,7 +3,7 @@ html, body {
     margin: 0;
 }
 
-.row{
+section{
 	padding: 20px 0;
 }
 
@@ -24,6 +24,9 @@ html, body {
   border-left: none;
 }
 
-#importacion form button[type='submit']{
-	width: 100%;
+table .btn span.glyphicon {    			
+	opacity: 0;				
+}
+table .btn.active span.glyphicon {				
+	opacity: 1;				
 }
