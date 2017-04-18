@@ -36,7 +36,14 @@ trait ExcelManageTrait{
 
 			
 			if(!empty($insert)){
-				DB::table($tableName)->insert($insert);
+				try {
+
+				    DB::table($tableName)->insert($insert);
+
+				} catch (Illuminate\Database\QueryException $e) {
+				    //return $e;
+				}
+				
 				return back()->with('success','Insert Record successfully.');
 			}
 

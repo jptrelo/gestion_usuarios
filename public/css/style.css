@@ -1,6 +1,7 @@
 html, body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
+    padding-top: 10px;
 }
 
 section{
@@ -29,4 +30,12 @@ table .btn span.glyphicon {
 }
 table .btn.active span.glyphicon {				
 	opacity: 1;				
+}
+
+.navbar-brand{
+	height: 110px;
+}
+
+.navbar-primary{
+	background-color: #337ab7;
 }

@@ -18,7 +18,11 @@
         
     </head>
     <body>
-
+        <header>
+            
+                        <img src="{{ asset('img/logo-paygo-cards.png') }}" class="center-block">
+        </header>
+        
         @yield('content')
 
         <!-- jQuery (necesario Bootstrap's JavaScript plugins) -->
