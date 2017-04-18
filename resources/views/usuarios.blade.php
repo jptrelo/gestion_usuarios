@@ -13,7 +13,7 @@
                             <div class="col-xs-9">
                                 
                                 {{ Form::file('fileExcel',
-                                             ['class' => 'form-control input-file', 'required' => 'true'])
+                                             ['class' => 'form-control input-file', 'required' => 'true', 'accept' => '.csv'])
                                 }}
                             </div>
 
@@ -77,9 +77,13 @@
                             {{ $usuarios->links() }}
                     </div>
                     <div class="col-xs-6">
-                        <div class="btn-group pull-right" role="group" aria-label="...">
+                        <div class="btn-group pull-right gestion-usuarios" role="group" aria-label="...">
                           <button type="button" class="btn btn-danger" id="elim-usuarios">Eliminar</button>
-                          <button type="button" class="btn btn-warning edit-usuarios">Editar</button>
+                          <button type="button" class="btn btn-warning" id="edit-usuarios">Editar</button>
+                        </div>
+                        <div class="btn-group pull-right gestion-edita" style="display:none;" role="group" aria-label="...">
+                            <button type="button" class="btn btn-default cancela">Cancelar</button>
+                            <button type="button" class="btn btn-success guarda">Guardar</button>
                         </div>
                     </div>
                 </div>
@@ -95,7 +99,7 @@
                             </thead>
                             <tbody>
                                 @forelse ($usuarios as $usuario) 
-                                    <tr id="usuario{{ $usuario->id }}">
+                                    <tr id="trUsuario{{ $usuario->id }}">
                                         <td>{{ $usuario->id }}</td>
                                         <td>{{ $usuario->first_name }}</td>
                                         <td>{{ $usuario->last_name }}</td>
@@ -118,7 +122,7 @@
                     </div>    
                     {{ $usuarios->links() }}
                 </div>
-            </div>
+            </div>            
         </section>
 
 

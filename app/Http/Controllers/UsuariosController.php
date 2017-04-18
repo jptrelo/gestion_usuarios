@@ -83,13 +83,20 @@ class UsuariosController extends Controller
      * Actualizar
      */
     
-    public function update(Request $request, $id)
+    public function update(Request $request, $id = null)
     {
-        $usuario = Usuario::find($id);
-        $usuario->first_name = $request->input('first_name');
-        $usuario->last_name = $request->input('last_name');
-        $usuario->save();
-        return 'Usuario modificado con exito, id: ' . $usuario->id;
+    	
+    	$listaUsuarios = $request->listaUsuarios;
+    	
+    	foreach ($listaUsuarios as $row) {
+    		$usuario = Usuario::find($row['id']);
+	        foreach ($row as $key => $value) {
+	        	$usuario[$key] = $value;
+	        }
+        	$usuario->save();
+    	}     
+
+        return Response::json(['message'=>'Usuario/s modificado/s con exito.']);
     }
 
     /**

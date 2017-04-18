@@ -18,6 +18,7 @@ Route::get('/', function () {
 Route::group(['prefix' => 'usuarios'], function()
 {
 	Route::resource('/', 'UsuariosController');
+	Route::put('update', 'UsuariosController@update');
 	Route::get('gestionUsuarios', 'UsuariosController@gestionUsuarios');
 	Route::post('importarUsuarios', 'UsuariosController@importarUsuarios');
 	Route::post('eliminar', 'UsuariosController@destroy');
