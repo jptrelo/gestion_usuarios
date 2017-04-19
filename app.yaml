@@ -16,7 +16,7 @@ env_variables:
   CACHE_DRIVER: database
   SESSION_DRIVER: database
   ## Set these environment variables according to your CloudSQL configuration.
-PRODUCTION_CLOUD_SQL_INSTANCE: '/cloudsql/gestion-usuarios:paygo'
- PRODUCTION_DB_USERNAME: 'root'
- PRODUCTION_DB_PASSWORD: 'root'
- PRODUCTION_DB_NAME: 'paygo'
+DB_HOST: localhost
+  DB_DATABASE: paygo
+  DB_USERNAME: root
+  DB_PASSWORD: root
