@@ -1,3 +1,5 @@
+application: gestion=usuarios
+version: 1
 runtime: php
 env: flex
 
