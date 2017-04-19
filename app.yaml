@@ -20,3 +20,8 @@ env_variables:
   DB_USERNAME: root
   DB_PASSWORD: root
   DB_SOCKET: /cloudsql/gestion-usuarios-165114:us-central1:paygo
+
+  beta_settings:
+    # for Cloud SQL, set this value to the Cloud SQL connection name,
+    # e.g. "project:region:cloudsql-instance"
+    cloud_sql_instances: "gestion-usuarios-165114:us-central1:paygo"
