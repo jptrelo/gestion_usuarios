@@ -9,14 +9,7 @@ skip_files: false
 
 env_variables:
   # The values here will override those in ".env". This is useful for
-  # production-specific configuration. However, feel free to set these values
-  # in ".env" instead if you prefer.
+  # production-specific configuration. However, feel free to set these
+  # values in ".env" instead if you prefer.
   APP_LOG: errorlog
   STORAGE_DIR: /tmp
-  CACHE_DRIVER: database
-  SESSION_DRIVER: database
-  ## Set these environment variables according to your CloudSQL configuration.
-DB_HOST: localhost
-  DB_DATABASE: paygo
-  DB_USERNAME: root
-  DB_PASSWORD: root
