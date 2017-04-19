@@ -13,3 +13,10 @@ env_variables:
   # values in ".env" instead if you prefer.
   APP_LOG: errorlog
   STORAGE_DIR: /tmp
+  CACHE_DRIVER: database
+  SESSION_DRIVER: database
+  DB_HOST: localhost
+  DB_DATABASE: paygo
+  DB_USERNAME: root
+  DB_PASSWORD: root
+  DB_SOCKET: /cloudsql/gestion-usuarios-165114:us-central1:paygo
