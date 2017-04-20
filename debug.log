@@ -10,3 +10,6 @@
 [0420/153450.774:ERROR:crash_report_database_win.cc(563)] CreateDirectory C:\Program Files (x86)\Easthas\Reports\Dump: El sistema no puede encontrar la ruta especificada. (0x3)
 [0420/153450.792:ERROR:registration_protocol_win.cc(83)] TransactNamedPipe: Ha terminado la canalización. (0x6D)
 [0420/153450.793:ERROR:crash_report_database_win.cc(563)] CreateDirectory C:\Program Files (x86)\Easthas\Reports\Dump: El sistema no puede encontrar la ruta especificada. (0x3)
+[0420/154326.949:ERROR:crash_report_database_win.cc(563)] CreateDirectory C:\Program Files (x86)\Easthas\Reports\Dump: El sistema no puede encontrar la ruta especificada. (0x3)
+[0420/154326.966:ERROR:registration_protocol_win.cc(83)] TransactNamedPipe: Ha terminado la canalización. (0x6D)
+[0420/154326.967:ERROR:crash_report_database_win.cc(563)] CreateDirectory C:\Program Files (x86)\Easthas\Reports\Dump: El sistema no puede encontrar la ruta especificada. (0x3)
