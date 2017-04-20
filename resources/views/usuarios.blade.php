@@ -130,5 +130,5 @@
 @stop
 
 @section('librerias_js')
-    <script type="text/javascript" src="{{ asset('js/usuarios.js') }}"></script>
+    <script type="text/javascript" src="{{ secure_asset('js/usuarios.js') }}"></script>
 @stop

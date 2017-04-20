@@ -14,13 +14,13 @@
         <!-- Styles -->
         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" >
         <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.5.4/bootstrap-select.min.css" >
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ secure_asset('css/style.css') }}">
         
     </head>
     <body>
         <header>
             
-                        <img src="{{ asset('img/logo-paygo-cards.png') }}" class="center-block">
+                        <img src="{{ secure_asset('img/logo-paygo-cards.png') }}" class="center-block">
         </header>
         
         @yield('content')
