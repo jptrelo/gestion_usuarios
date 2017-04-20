@@ -18,5 +18,4 @@ env_variables:
   DB_HOST: localhost
   DB_DATABASE: paygo
   DB_USERNAME: root
-  DB_PASSWORD: 
   DB_SOCKET: /cloudsql/gestion-usuarios-165114:us-central1:paygo
