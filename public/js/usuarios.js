@@ -155,7 +155,7 @@ $(document).ready(function(){
 
                 $(usuarios).each(function(){
 		        	
-		        	$('#usuario' + $(this).val()).remove();
+		        	$('#trUsuario' + $(this).val()).remove();
 
 		        });
             },
